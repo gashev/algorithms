@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 class Main {
     public static void main(String[] args) {
-        Population population = new Population(new int[] {1, 2, 3, 4, 300});
+        Population population = new Population(new int[] {1, 2, 3, 4, 30});
         population.createPopulation(300);
         int generation = 0;
         while (true) {
