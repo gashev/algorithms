@@ -40,7 +40,7 @@ int isPrime(
 ) {
     unsigned int i = 0;
     
-    while (i < count) {
+    while ((i < count) && (primes[i] <= sqrt(num))) {
         if (num % primes[i] == 0) {
             return 0;
         }
