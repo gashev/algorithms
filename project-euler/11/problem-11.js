@@ -39,63 +39,56 @@ function createGrid(data) {
 }
 
 function calculateMax(grid, count) {
-    var max = 0;
-    for (var i = 0; i < grid.length; i++) {
-        for (var j = 0; j < grid[i].length; j++) {
-            var tmp = 1;
-            for (var k = 0; k < count; k++) {
-                if ((j + k) >= grid[i].length) {
-                    tmp = 0;
-                    break;
-                } else {
-                    tmp *= grid[i][j + k];
-                }
-            }
-            if (tmp > max) {
-                max = tmp;
-            }
+    var max = 0, i, j, k, tmp;
 
+    for (i = 0; i < grid.length; i++) {
+        for (j = 0; j <= grid[i].length - count; j++) {
             tmp = 1;
-            for (var k = 0; k < count; k++) {
-                if ((i + k) >= grid.length) {
-                    tmp = 0;
-                    break;
-                } else {
-                    tmp *= grid[i + k][j];
-                }
-            }
-            if (tmp > max) {
-                max = tmp;
-            }
-
-            tmp = 1;
-            for (var k = 0; k < count; k++) {
-                if (((i + k) >= grid.length) || ((j + k) >= grid[i].length)) {
-                    tmp = 0;
-                    break;
-                } else {
-                    tmp *= grid[i + k][j + k];
-                }
-            }
-            if (tmp > max) {
-                max = tmp;
-            }
-
-            tmp = 1;
-            for (var k = 0; k < count; k++) {
-                if (((i +- k) < 0) || ((j + k) >= grid[i].length)) {
-                    tmp = 0;
-                    break;
-                } else {
-                    tmp *= grid[i - k][j + k];
-                }
+            for (k = 0; k < count; k++) {
+                tmp *= grid[i][j + k];
             }
             if (tmp > max) {
                 max = tmp;
             }
         }
     }
-    
+
+    for (i = 0; i <= grid.length - count; i++) {
+        for (j = 0; j < grid[i].length; j++) {
+            tmp = 1;
+            for (k = 0; k < count; k++) {
+                tmp *= grid[i + k][j];
+            }
+            if (tmp > max) {
+                max = tmp;
+            }
+        }
+    }
+
+    for (i = 0; i <= grid.length - count; i++) {
+        for (j = 0; j <= grid[i].length - count; j++) {
+            tmp = 1;
+            for (k = 0; k < count; k++) {
+                tmp *= grid[i + k][j + k];
+            }
+            if (tmp > max) {
+                max = tmp;
+            }
+        }
+    }
+
+    for (i = count - 1; i < grid.length; i++) {
+        for (j = 0; j <= grid[i].length - count; j++) {
+            tmp = 1;
+            for (k = 0; k < count; k++) {
+                tmp *= grid[i - k][j + k];
+            }
+            if (tmp > max) {
+                max = tmp;
+            }
+        }
+    }
+
     return max;
 }
 
