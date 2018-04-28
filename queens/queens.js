@@ -21,7 +21,7 @@ var nextPermutation = function(nums) {
     tmp = nums[i];
     nums[i] = nums[j];
     nums[j] = tmp;
-  
+
     i = i + 1;
     j = size - 1;
     while (i < j) {
@@ -30,7 +30,7 @@ var nextPermutation = function(nums) {
         nums[j] = tmp;
         i++;
         j--;
-    } 
+    }
     return true;
 };
 
@@ -76,10 +76,18 @@ var isValidPosition = function(position) {
         for (var k = 0; k < 4; k++) {
             step = steps[k];
             j = 1;
-            while ((current[0] + step[0] * j > 0) && (current[0] + step[0] *j <= 8) && (current[1] + step[1] * j > 0) && (current[1] + step[1] * j <= 8))   {
+            while (
+                (current[0] + step[0] * j > 0) &&
+                (current[0] + step[0] * j <= 8) &&
+                (current[1] + step[1] * j > 0) &&
+                (current[1] + step[1] * j <= 8)
+            ) {
                 tmp = [current[0] + step[0] * j, current[1] + step[1] * j];
                 for (var z = 0; z < 8; z ++) {
-                    if ((tmp[0] == position[z][0]) && (tmp[1] == position[z][1])) { 
+                    if (
+                        (tmp[0] == position[z][0]) &&
+                        (tmp[1] == position[z][1])
+                    ) {
                         return false;
                     }
                 }
@@ -87,11 +95,11 @@ var isValidPosition = function(position) {
             }
         }
     }
-    
+
     return true;
 }
 
-var a = [1, 2, 3, 4, 5, 6, 7, 8];
+var a = Array.from({length: 8}, (v, k) => k + 1);
 checkQueens(a);
 while (nextPermutation(a)) {
     checkQueens(a);
