@@ -41,6 +41,8 @@ var checkQueens = function(pos) {
     }
 
     if (isValidPosition(positions)) {
+        positionNumber++;
+        console.log('Position: ' + positionNumber);
         printBoard(positions);
     }
 };
@@ -48,9 +50,9 @@ var checkQueens = function(pos) {
 var printBoard = function(position) {
     var str;
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < count; i++) {
         str = '';
-        for (var j = 7; j >= 0; j--) {
+        for (var j = count - 1; j >= 0; j--) {
             if ((position[i][0] == i + 1) && (position[i][1] == j + 1)) {
                 str += 'o';
             } else {
@@ -70,20 +72,21 @@ var isValidPosition = function(position) {
     var steps = [ [-1, -1], [-1, 1], [1, -1], [1, 1]];
     var step;
     var vert;
-    var tmp;
-    for (var i = 0; i < 8; i++) {
+    var tmp
+
+    for (var i = 0; i < count; i++) {
         current = position[i];
         for (var k = 0; k < 4; k++) {
             step = steps[k];
             j = 1;
             while (
                 (current[0] + step[0] * j > 0) &&
-                (current[0] + step[0] * j <= 8) &&
+                (current[0] + step[0] * j <= count) &&
                 (current[1] + step[1] * j > 0) &&
-                (current[1] + step[1] * j <= 8)
+                (current[1] + step[1] * j <= count)
             ) {
                 tmp = [current[0] + step[0] * j, current[1] + step[1] * j];
-                for (var z = 0; z < 8; z ++) {
+                for (var z = 0; z < count; z ++) {
                     if (
                         (tmp[0] == position[z][0]) &&
                         (tmp[1] == position[z][1])
@@ -99,7 +102,9 @@ var isValidPosition = function(position) {
     return true;
 }
 
-var a = Array.from({length: 8}, (v, k) => k + 1);
+var count = 8;
+var positionNumber = 0;
+var a = Array.from({length: count}, (v, k) => k + 1);
 checkQueens(a);
 while (nextPermutation(a)) {
     checkQueens(a);
