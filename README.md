@@ -13,3 +13,6 @@ Lecture 1
 * [peak finding](https://github.com/gashev/algorithms/tree/master/leetcode/162)
 * [two dimensional version of the peak finder algorithm](https://github.com/gashev/algorithms/tree/master/2d-find-peak)
 
+# Collections
+* [Leetcode](https://github.com/gashev/algorithms/tree/master/leetcode)
+* [Project Euler](https://github.com/gashev/algorithms/tree/master/project-euler)
