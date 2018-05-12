@@ -1,2 +1,2 @@
 #
-* [Next permutation](/gashev/algorithms/tree/master/next-permutation)
+* [Next permutation](https://github.com/gashev/algorithms/tree/master/next-permutation)
