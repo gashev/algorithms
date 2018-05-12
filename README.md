@@ -1,2 +1,2 @@
 #
-* [Next permutation](./tree/master/next-permutation)
+* [Next permutation](./../tree/master/next-permutation)
