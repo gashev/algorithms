@@ -1,4 +1,5 @@
 /**
+ * @TODO Fix for the array [-1,-2,-3,4,1,3,0,3,-2,1,9,-2,2,2,-1,1,-5,4,-3]: ignored solution [2, 2].
  * @param {number[]} nums
  * @param {number} sum
  * @return {number[][]}
@@ -39,5 +40,5 @@ var twoSum = function(nums, sum) {
     return items;
 }
 
-var nums = [-1,-2,-3,4,1,3,0,3,-2,1,9,-2,2,-1,1,-5,4,-3];
-console.log(twoSum(nums, -2));
+var nums = [-1,-2,-3,4,1,3,0,3,-2,1,9,-2,2,2,-1,1,-5,4,-3];
+console.log(twoSum(nums, 4));
