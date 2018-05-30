@@ -1,5 +1,4 @@
 /**
- * @TODO Fix for the array [-1,-2,-3,4,1,3,0,3,-2,1,9,-2,2,2,-1,1,-5,4,-3]: ignored solution [2, 2].
  * @param {number[]} nums
  * @param {number} sum
  * @return {number[][]}
@@ -19,20 +18,16 @@ var twoSum = function(nums, sum) {
         }
         start = i;
         end = nums.length - 1;
-        while (start < end) {
-            item = Math.trunc((start + end) / 2) + 1;
+        while (start <= end) {
+            item = Math.trunc((start + end) / 2);
             curr_sum = nums[i] + nums[item];
             if (curr_sum == sum) {  
                 items.push([nums[i], nums[item]]);
                 break;
             } else if (curr_sum < sum) {  
-                if (start == item) 
-                    break;
-                start = item;
+                start = item + 1;
             } else {
-                if (end == item) 
-                    break;
-                end = item;
+                end = item - 1;
             }
         } 
     }
