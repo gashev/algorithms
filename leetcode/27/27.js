@@ -10,6 +10,9 @@ var removeElement = function(nums, val) {
     for (var i = 0; i < nums.length; i++) {
         if (nums[i] != val) {
             loopIndex++;
+            if (removeCount == 0) { 
+                continue;
+            }
             nums[loopIndex] = nums[i];
         } else {
             removeCount++;
