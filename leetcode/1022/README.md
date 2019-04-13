@@ -9,9 +9,9 @@ Return the sum of these numbers.
 
 Example 1:
 
-Input: [1,0,1,0,1,0,1]
-Output: 22
-Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+    Input: [1,0,1,0,1,0,1]
+    Output: 22
+    Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
 
  
 
