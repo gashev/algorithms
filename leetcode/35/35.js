@@ -24,15 +24,11 @@ var searchInsert = function(nums, target) {
         }
     }
 
-    if (nums[min] > target) {
+    if (nums[min] >= target) {
         return min;
     }
     if (nums[max] < target) {
         return max + 1;
-    }
-
-    if (nums[min] === target) {
-        return min;
     }
 
     if (nums[max] === target) {
